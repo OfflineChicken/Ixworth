@@ -1,7 +1,15 @@
-# Ixworth
+# Ixworth-UI
 Bred as a fast-growing high-quality application
 
-# IxworthUi
+## Prerequisites / Build Instructions
+
+Node version 12.10.0
+NPM version 6.10.3
+
+```
+npm install
+ng build
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
