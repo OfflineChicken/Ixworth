@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlannerComponent } from './planner/planner.component';
-import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 const routes: Routes = [
   { path: 'planner', component: PlannerComponent },
-  { path: 'welcome', component: AppComponent },
+  { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full'},
-  { path: '**', component: AppComponent }
+  { path: '**', component: WelcomeComponent }
 ];
 
 @NgModule({
