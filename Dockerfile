@@ -14,5 +14,4 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY nginx.conf /etc/nginx/nginx.conf
 WORKDIR /usr/share/nginx/html
 
-# ideally we don't need to hardcode ixworth-ui here?
-COPY --from=compile /app/dist/ixworth-ui . 
+COPY --from=compile /app/dist/* . 
