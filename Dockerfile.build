@@ -1,0 +1,8 @@
+# Build the deliverable
+FROM node:lts-stretch-slim as compile
+RUN npm install -g @angular/cli
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN ng build --prod
+RUN ng test
