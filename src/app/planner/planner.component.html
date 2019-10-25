@@ -1,0 +1,17 @@
+<h2>Awesome Planner</h2>
+<div>It was the best of plans, it was the worst of plans.</div> 
+<div *ngFor="let plan of plans">
+    <h3>
+      <a [title]="plan.name + ' details'">
+        {{ plan.name }}
+      </a>
+    </h3>
+  
+    <p *ngIf="plan.description">
+      Description: {{ plan.description }}
+    </p>
+  
+    <button (click)="share()">
+      Share
+    </button>
+</div>
