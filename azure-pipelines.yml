@@ -8,5 +8,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: docker build .
+- task: CmdLine@2
   displayName: 'Build the docker image'
+  inputs:
+    script: |
+      docker build -f Dockerfile.build -t angularapp .
+      docker run -d --name=angularappinstance angularapp
+      docker cp angularappinstance:/app/testresults.xml .
+      docker rm -f angularappinstance
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/testresults.xml'
