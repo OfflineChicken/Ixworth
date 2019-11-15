@@ -32,6 +32,17 @@ module.exports = function (config) {
       properties: {}, // key value pair of properties to add to the <properties> section of the report
       xmlVersion: null // use '1' if reporting to be per SonarQube 6.2 XML format
     },
+    customLaunchers: {
+      'ChromeHeadless': {
+        base: 'Chrome',
+        flags: [
+          '--no-sandbox',
+          '--headless',
+          '--disable-gpu',
+          '--remote-debugging-port=9222'
+        ]
+      }
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
